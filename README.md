@@ -11,31 +11,43 @@ The data is stored under the following paths:
 
 ```
 model/
-├── feature/
-└── prediction/
+├── features/
+└── predictions/
 
 observations/
-├── feature/
-└── prediction/
+├── features/
+└── predictions/
 ```
 
 ## Description of subsets
 
-**1.  `model/feature`**
+**1.  `model/features`**
+
+File format: `YYYYMMDD.nc` (`YYYY`: year, `MM`: month, `DD`: day in the month)
+
+Time Period: From 2020 to 2023, only the freezing season (18 Oct. to 15 Apr.)
 
 Contains pairs of low-resolution/high-resolution fields from the NeXtSIM simulation. The dataset generation is described in this document. The fields are listed here
-| Variable               | Description                              |
-|------------------------|------------------------------------------|
-| `time`                 | Time in days since 2022-01-12 00:00:00   |
-| `longitude`            | Longitude in degrees east                |
-| `latitude`             | Latitude in degrees north                |
-| `sic`                  | Sea Ice Concentration                    |
-| `sic_reprocessed`      | Reprocessed Sea Ice Concentration        |
-| `sit`                  | Sea Ice Thickness                        |
-| `sit_reprocessed`      | Reprocessed Sea Ice Thickness            |
-| `divergence`           | Divergence of sea ice motion             |
-| `divergence_reprocessed` | Reprocessed Divergence of sea ice motion |
-| `shear`                | Shear of sea ice motion                  |
-| `shear_reprocessed`    | Reprocessed Shear of sea ice motion      |
+## Variables
+Dimensions: y = 1086 ; x = 1308
+
+| Variable               | Dimensions  | Description                              |
+|------------------------|-------------|------------------------------------------|
+| `time`                 | -           | Time in days since 2022-01-12 00:00:00   |
+| `longitude`            | (y, x)    | Longitude in degrees east                |
+| `latitude`             | (y, x)    | Latitude in degrees north                |
+| `sic`                  | (y, x)    | Sea Ice Concentration                    |
+| `sic_reprocessed`      | (y, x)    | Reprocessed Sea Ice Concentration        |
+| `sit`                  | (y, x)    | Sea Ice Thickness                        |
+| `sit_reprocessed`      | (y, x)    | Reprocessed Sea Ice Thickness            |
+| `divergence`           | (y, x)    | Divergence of sea ice motion             |
+| `divergence_reprocessed` | (y, x)  | Reprocessed Divergence of sea ice motion |
+| `shear`                | (y, x)    | Shear of sea ice motion                  |
+| `shear_reprocessed`    | (y, x)    | Reprocessed Shear of sea ice motion      |
+
+
 
 the `*_reprocessed` fields are the actual input feature, consisting in low-resolution fields. The other fields `sic`, `sit`, `divergence`, and `shear` can be used as ground truth or labels and are not observable by satellite.
+
+
+
