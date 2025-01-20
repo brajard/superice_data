@@ -1,7 +1,7 @@
 # Data of the SuperIce project
 This repository contained an updated description of the data produced in the SuperIce project led by the [NERSC](https://nersc.no/) and supported by [ESA Φ-lab](https://philab.esa.int/)
 
-More info on the project: (link to the website)[https://nansencenter.github.io/superice-nersc/]
+More info on the project: [link to the website](https://nansencenter.github.io/superice-nersc/)
 
 ## Download instruction
 Data are stored on the https://archive.sigma2.no/ archive under the follwing link:
